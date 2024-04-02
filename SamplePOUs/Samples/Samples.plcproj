@@ -48,25 +48,34 @@
     <Compile Include="POUs\Events\DUTs\ST_Event.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Events\EventLogger.TcPOU">
+    <Compile Include="POUs\Events\EventLoggerProgram.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Events\FB_CsvPersistentEventStorage.TcPOU">
+    <Compile Include="POUs\Events\FunctionBlocks\EventLogger.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Events\FunctionBlocks\FB_CsvPersistentEventStorage.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Events\Functions\UpdateEventTimestampWithSystemTime.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Events\Interface\I_PersistentEventStorage.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Events\UpdateEventTimestampWithSystemTime.TcPOU">
+    <Compile Include="POUs\LEDs\EL2564\Countdown.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\LEDs.TcPOU">
+    <Compile Include="POUs\LEDs\FunctionBlocks\LEDStateMachine.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\LEDs\EL2564\RGBW.TcPOU">
+    <Compile Include="POUs\LEDs\Functions\RGBWToLED.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\LEDs\LEDStateMachine.TcPOU">
+    <Compile Include="POUs\LEDs\Functions\SingleSignalToLED.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\LEDs\LEDs.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
@@ -81,13 +90,10 @@
     <Compile Include="POUs\Signal Gen\FastSignalGen.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Signal Gen\VariableSine.TcPOU">
+    <Compile Include="POUs\Signal Gen\FunctionBlocks\VariableSine.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Signal Monitoring\SignalTimeComparison.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\EventLoggerProgram.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Time\GetDCTime.TcPOU">
@@ -115,8 +121,13 @@
     <Folder Include="POUs\Events" />
     <Folder Include="POUs\Events\DUTs" />
     <Folder Include="POUs\Events\Interface" />
+    <Folder Include="POUs\Events\FunctionBlocks" />
+    <Folder Include="POUs\Events\Functions" />
     <Folder Include="POUs\LEDs" />
     <Folder Include="POUs\LEDs\EL2564" />
+    <Folder Include="POUs\LEDs\Functions" />
+    <Folder Include="POUs\LEDs\FunctionBlocks" />
+    <Folder Include="POUs\Signal Gen\FunctionBlocks" />
     <Folder Include="POUs\Signal Monitoring" />
     <Folder Include="POUs\Time" />
     <Folder Include="POUs\Oversampling" />

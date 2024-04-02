@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="RGBWToLED" Id="{a7f06840-2832-44dc-809e-ba6984709d6c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION RGBWToLED
+VAR_INPUT
+	RedIn	:	USINT;
+	GreenIn	:	USINT;
+	BlueIn	:	USINT;
+	WhiteIn	:	USINT;
+END_VAR
+VAR_OUTPUT
+	RedOut		:	INT;
+	GreenOut	:	INT;
+	BlueOut		:	INT;
+	WhiteOut	:	INT;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[RedOut := SingleSignalToLED(RedIn);
+GreenOut := SingleSignalToLED(GreenIn);
+BlueOut := SingleSignalToLED(BlueIn);
+WhiteOut := SingleSignalToLED(WhiteIn);]]></ST>
+    </Implementation>
+    <LineIds Name="RGBWToLED">
+      <LineId Id="7" Count="0" />
+      <LineId Id="21" Count="2" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

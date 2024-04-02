@@ -11,7 +11,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-002000000005}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..4] OF BIT</Name>
 			<BitSize>5</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -56,7 +56,7 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{18071995-0000-0000-0000-00200000000E}" IecBaseType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..13] OF BIT</Name>
+			<Name GUID="{18071995-0000-0000-0000-00200000000E}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..13] OF BIT</Name>
 			<BitSize>14</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
 			<ArrayInfo>
@@ -83,8 +83,8 @@
 			</Settings>
 			<Licenses>
 				<Target>
-					<ManualSelect>{BB40055B-8333-4223-90EA-7C4559DC7C69}</ManualSelect>
 					<ManualSelect>{0070B910-0995-4F44-83BF-D1E141B4D8C3}</ManualSelect>
+					<ManualSelect>{BB40055B-8333-4223-90EA-7C4559DC7C69}</ManualSelect>
 					<ManualSelect>{CCA47D7F-3A22-4852-81CD-15A045A6B646}</ManualSelect>
 					<ManualSelect>{02AC2825-C3C7-4D15-AAF6-4EB45EFAA2D0}</ManualSelect>
 					<ManualSelect>{EE499E71-9522-4C05-86B4-8AD0F904E0C4}</ManualSelect>
@@ -113,25 +113,25 @@
 		</System>
 		<Plc>
 			<Project GUID="{003D908A-270A-494C-A360-6536B208369D}" Name="Samples" PrjFilePath="Samples\Samples.plcproj" TmcFilePath="Samples\Samples.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Samples\Samples.tmc" TmcHash="{AF0C5BCA-088B-FEF5-5481-213D5E38DDD2}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Samples\Samples.tmc" TmcHash="{AE333405-B0DE-0AFD-7892-0891594BEE64}">
 					<Name>Samples Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>LEDTask Outputs</Name>
 						<Var>
-							<Name>LEDs.rgbw.Red</Name>
+							<Name>LEDs.Red</Name>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>LEDs.rgbw.Green</Name>
+							<Name>LEDs.Green</Name>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>LEDs.rgbw.Blue</Name>
+							<Name>LEDs.Blue</Name>
 							<Type>INT</Type>
 						</Var>
 						<Var>
-							<Name>LEDs.rgbw.White</Name>
+							<Name>LEDs.White</Name>
 							<Type>INT</Type>
 						</Var>
 					</Vars>
@@ -8086,10 +8086,10 @@
 				<Link VarA="PlcTask Inputs^MAIN.oversamplingHandler.fbDC.NextLatch" VarB="PAI Timestamp Channel 1^StartTimeNextLatch"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 5 (EK1200)^Term 5 (EL2564)">
-				<Link VarA="LEDTask Outputs^LEDs.rgbw.Blue" VarB="PWM Outputs Channel 3^PWM output"/>
-				<Link VarA="LEDTask Outputs^LEDs.rgbw.Green" VarB="PWM Outputs Channel 2^PWM output"/>
-				<Link VarA="LEDTask Outputs^LEDs.rgbw.Red" VarB="PWM Outputs Channel 1^PWM output"/>
-				<Link VarA="LEDTask Outputs^LEDs.rgbw.White" VarB="PWM Outputs Channel 4^PWM output"/>
+				<Link VarA="LEDTask Outputs^LEDs.Blue" VarB="PWM Outputs Channel 3^PWM output"/>
+				<Link VarA="LEDTask Outputs^LEDs.Green" VarB="PWM Outputs Channel 2^PWM output"/>
+				<Link VarA="LEDTask Outputs^LEDs.Red" VarB="PWM Outputs Channel 1^PWM output"/>
+				<Link VarA="LEDTask Outputs^LEDs.White" VarB="PWM Outputs Channel 4^PWM output"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>
