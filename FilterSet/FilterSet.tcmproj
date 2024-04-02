@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{b707a747-a8d8-4472-b56a-1b8769ee4aa5}</ProjectGuid>
+    <AssemblyName>FilterSet</AssemblyName>
+    <Name>FilterSet</Name>
+    <RootNamespace>FilterSet</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Filter Designer Project.tcfilterproj">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+</Project>

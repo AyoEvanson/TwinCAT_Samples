@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FilterDesignerFilterSet AssemblyName="TwinCAT.Measurement.FilterDesigner">
+  <AlyFunctionGuids />
+  <AutoSamplesToFilterCalculation>true</AutoSamplesToFilterCalculation>
+  <Bandwidth>100</Bandwidth>
+  <Channels>1</Channels>
+  <CoeffAStringArray>[1, -1.77863177782458, 0.800802646665708]</CoeffAStringArray>
+  <CoeffBStringArray>[0.00554271721028068, 0.0110854344205614, 0.00554271721028068]</CoeffBStringArray>
+  <CoeffSosStringArray>[0.00554271721028068, 0.0110854344205614, 0.00554271721028068, 1, -1.77863177782458, 0.800802646665708]</CoeffSosStringArray>
+  <Comment />
+  <CursorVisibility>None</CursorVisibility>
+  <CutOff>100</CutOff>
+  <CutOff2>250</CutOff2>
+  <CutOff3>250</CutOff3>
+  <DeltaMax>0.1</DeltaMax>
+  <Depth>16.9884</Depth>
+  <DisplayColor>Blue</DisplayColor>
+  <Enabled>true</Enabled>
+  <EnablePLCOptions>false</EnablePLCOptions>
+  <EnableTerminalOptions>false</EnableTerminalOptions>
+  <FilterName>Butterworth</FilterName>
+  <FilterType>LowPass</FilterType>
+  <Function>PT2oscillation</Function>
+  <Guid>42a6c77a-f58e-4538-afd4-33d5317a4406</Guid>
+  <HighPassDamping>0.1</HighPassDamping>
+  <HighPassFrequency>750</HighPassFrequency>
+  <ImpulseStepPoints>200</ImpulseStepPoints>
+  <Kp>1</Kp>
+  <LineColor>Blue</LineColor>
+  <LineWidth>1</LineWidth>
+  <LowPassDamping>0.707</LowPassDamping>
+  <LowPassFrequency>200</LowPassFrequency>
+  <MagnitudeMode>normalized</MagnitudeMode>
+  <Marks>false</Marks>
+  <Name>FilterDesignerFilterSet_54</Name>
+  <NotchFrequency>200</NotchFrequency>
+  <Order>2</Order>
+  <Oversamples>1</Oversamples>
+  <PassBandRipple>0.1</PassBandRipple>
+  <Precision>FixedPoint32Bit</Precision>
+  <Q>30</Q>
+  <QuantificationSucceeded>true</QuantificationSucceeded>
+  <SampleRate>20000</SampleRate>
+  <SamplesToFilter>10</SamplesToFilter>
+  <SettlingTimeTolerance>2</SettlingTimeTolerance>
+  <ShowMarker>None</ShowMarker>
+  <ShowTitle>true</ShowTitle>
+  <ShowValue>true</ShowValue>
+  <SortPriority>2</SortPriority>
+  <SupportPoints>512</SupportPoints>
+  <Target>FilterLibrary</Target>
+  <TerminalChannel>0</TerminalChannel>
+  <TerminalFilter>0</TerminalFilter>
+  <Theta>0.5</Theta>
+  <Title>Filter Set</Title>
+  <Tt>0.01</Tt>
+  <XAxisScale>Logarithmic</XAxisScale>
+</FilterDesignerFilterSet>

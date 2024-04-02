@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="LEDs" Id="{080668ae-5330-4f9e-94a4-ce20fb139d33}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM LEDs
+VAR
+	rgbw	:	RGBW;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[rgbw();]]></ST>
+    </Implementation>
+    <LineIds Name="LEDs">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

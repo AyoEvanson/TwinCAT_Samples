@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="AnalogSignalProcessing" Id="{7d201f37-dca7-4cce-84fc-77a80c00114a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK AnalogSignalProcessing
+VAR_INPUT
+	signalIn	:	DINT;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	PM10VMax	:	LREAL := 7812500; //8388607 - 24bit not extended
+	PM10VMin	:	LREAL := 7812500;
+	PM10Mult	:	LREAL := 10;
+	
+	voltageIn	:	LREAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[voltageIn := AnalogSignalConverter(input := signalIn, maximum := PM10VMax, minimum := PM10VMin, multiplier := PM10Mult);]]></ST>
+    </Implementation>
+    <Method Name="AnalogSignalConverter" Id="{88e84f77-929d-4220-85bf-bcd097e5fb82}">
+      <Declaration><![CDATA[METHOD AnalogSignalConverter : LREAL
+VAR_INPUT
+	input		:	LREAL;
+	maximum		:	LREAL;
+	minimum		:	LREAL;
+	multiplier	:	LREAL;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF input > 0 THEN
+	AnalogSignalConverter := (input/maximum) * multiplier;
+ELSIF input < 0 THEN
+	AnalogSignalConverter := (input/minimum) * multiplier;
+ELSIF input = 0 THEN
+	AnalogSignalConverter := 0;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="AnalogSignalProcessing">
+      <LineId Id="18" Count="0" />
+    </LineIds>
+    <LineIds Name="AnalogSignalProcessing.AnalogSignalConverter">
+      <LineId Id="41" Count="0" />
+      <LineId Id="58" Count="0" />
+      <LineId Id="17" Count="2" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="57" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

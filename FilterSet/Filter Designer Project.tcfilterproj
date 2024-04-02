@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FilterDesignerProject AssemblyName="TwinCAT.Measurement.FilterDesigner">
+  <AlyFilePath />
+  <Comment />
+  <DisplayColor>Black</DisplayColor>
+  <Guid>99a356de-6bbe-4b1f-aff1-27b12651aeb5</Guid>
+  <LayoutString>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Layout&gt;
+  &lt;Window Guid="5e2c4b0e-cb7b-44f1-afb6-8e880838b286" LastFocused="133547330667122720" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="0bf34092-f1dc-4616-803b-915669315e2e" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;DocumentContainer Dock="5"&gt;
+    &lt;SplitLayoutSystem WorkingSize="250, 400" SplitMode="0"&gt;
+      &lt;ControlLayoutSystem WorkingSize="250, 400" Guid="0bf34092-f1dc-4616-803b-915669315e2e" Collapsed="0" SelectedControl="5e2c4b0e-cb7b-44f1-afb6-8e880838b286"&gt;
+        &lt;Controls&gt;
+          &lt;Control Guid="5e2c4b0e-cb7b-44f1-afb6-8e880838b286" /&gt;
+        &lt;/Controls&gt;
+      &lt;/ControlLayoutSystem&gt;
+    &lt;/SplitLayoutSystem&gt;
+  &lt;/DocumentContainer&gt;
+&lt;/Layout&gt;</LayoutString>
+  <Name>FilterDesignerProject_51</Name>
+  <ScopeRefFilePath />
+  <SortPriority>100</SortPriority>
+  <SubMember>
+    <FilterDesignerPlot AssemblyName="TwinCAT.Measurement.FilterDesigner">
+      <Comment />
+      <DisplayColor>Black</DisplayColor>
+      <Guid>5e2c4b0e-cb7b-44f1-afb6-8e880838b286</Guid>
+      <GuidBode>b7fca82d-2f50-4df2-8a93-e4804a85a24c</GuidBode>
+      <GuidImpulseStep>40a4c5d8-d8da-4e5d-9525-c64780154fb9</GuidImpulseStep>
+      <GuidPhaseGroup>9b8581b8-fec6-42f4-8690-7216536974f5</GuidPhaseGroup>
+      <GuidPoleZero>db094b7b-aa92-452d-97c6-6c9e4881bc67</GuidPoleZero>
+      <LayoutString>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Layout&gt;
+  &lt;Window Guid="b7fca82d-2f50-4df2-8a93-e4804a85a24c" LastFocused="133547330667172022" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="3763c8c1-2146-4908-a68f-784fa67cbb61" DocumentIndexInWindowGroup="0" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="40a4c5d8-d8da-4e5d-9525-c64780154fb9" LastFocused="133546310452846713" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="3763c8c1-2146-4908-a68f-784fa67cbb61" DocumentIndexInWindowGroup="1" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="9b8581b8-fec6-42f4-8690-7216536974f5" LastFocused="133546310467870467" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="3763c8c1-2146-4908-a68f-784fa67cbb61" DocumentIndexInWindowGroup="2" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;Window Guid="db094b7b-aa92-452d-97c6-6c9e4881bc67" LastFocused="133546310477985724" DockedSize="200" PopupSize="0" FloatingLocation="-1, -1" FloatingSize="550, 400" LastOpenDockSituation="Document" LastFixedDockSituation="Document" LastFixedDockLocation="Right" LastFloatingWindowGuid="00000000-0000-0000-0000-000000000000" LastDockContainerCount="0" LastDockContainerIndex="0" DockedWorkingSize="250, 400" DockedWindowGroupGuid="00000000-0000-0000-0000-000000000000" DockedIndexInWindowGroup="0" DockedSplitPath="0" DocumentWorkingSize="250, 400" DocumentWindowGroupGuid="3763c8c1-2146-4908-a68f-784fa67cbb61" DocumentIndexInWindowGroup="3" DocumentSplitPath="0" FloatingWorkingSize="250, 400" FloatingWindowGroupGuid="00000000-0000-0000-0000-000000000000" FloatingIndexInWindowGroup="0" FloatingSplitPath="0" /&gt;
+  &lt;DocumentContainer Dock="5"&gt;
+    &lt;SplitLayoutSystem WorkingSize="250, 400" SplitMode="0"&gt;
+      &lt;ControlLayoutSystem WorkingSize="250, 400" Guid="3763c8c1-2146-4908-a68f-784fa67cbb61" Collapsed="0" SelectedControl="b7fca82d-2f50-4df2-8a93-e4804a85a24c"&gt;
+        &lt;Controls&gt;
+          &lt;Control Guid="b7fca82d-2f50-4df2-8a93-e4804a85a24c" /&gt;
+          &lt;Control Guid="40a4c5d8-d8da-4e5d-9525-c64780154fb9" /&gt;
+          &lt;Control Guid="9b8581b8-fec6-42f4-8690-7216536974f5" /&gt;
+          &lt;Control Guid="db094b7b-aa92-452d-97c6-6c9e4881bc67" /&gt;
+        &lt;/Controls&gt;
+      &lt;/ControlLayoutSystem&gt;
+    &lt;/SplitLayoutSystem&gt;
+  &lt;/DocumentContainer&gt;
+&lt;/Layout&gt;</LayoutString>
+      <MagnitudeMode>normalized</MagnitudeMode>
+      <Name>FilterDesignerPlot_53</Name>
+      <SortPriority>1</SortPriority>
+      <SubMember>
+        <FilterDesignerFilterSet AssemblyName="TwinCAT.Measurement.FilterDesigner">
+          <FilePath>Filter Set.tcfilterset</FilePath>
+        </FilterDesignerFilterSet>
+      </SubMember>
+      <Title>Filter Plot</Title>
+      <XAxisScale>Logarithmic</XAxisScale>
+    </FilterDesignerPlot>
+  </SubMember>
+  <Title>Filter Designer Project</Title>
+  <Version>1.0.0.0</Version>
+</FilterDesignerProject>

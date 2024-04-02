@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Task Name="FasterTask" Id="{03c71bcf-66e0-4053-960d-80a6311b240f}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>50</CycleTime>
+    <Priority>6</Priority>
+    <PouCall>
+      <Name>FastSignalGen</Name>
+    </PouCall>
+    <TaskFBGuid>{d5bae96c-2586-41ee-b363-9b74c9bfb1d9}</TaskFBGuid>
+    <Fb_init>{29897b56-87a4-4aca-8665-606f87196765}</Fb_init>
+    <Fb_exit>{96465175-e7e2-46ed-a5c9-269cdfcf798e}</Fb_exit>
+    <CycleUpdate>{1da16fd4-9678-45dd-85a8-3dfdcb49b2bf}</CycleUpdate>
+    <PostCycleUpdate>{31323fb2-e958-4525-a940-ee2e919f269d}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>

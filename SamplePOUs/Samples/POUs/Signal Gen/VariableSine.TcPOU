@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="VariableSine" Id="{2105ec2f-bf9a-4662-bb23-dc42c24dace7}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK VariableSine
+VAR
+	fManValue		:	LREAL;
+	
+	fbCTRL_SIGNAL_GENERATOR				: FB_CTRL_SIGNAL_GENERATOR;
+	stCTRL_SIGNAL_GENERATOR_PARAMS		: ST_CTRL_SIGNAL_GENERATOR_PARAMS;
+	
+	eMode								: E_CTRL_MODE;
+	
+	bInit							: BOOL	:= TRUE;
+END_VAR
+VAR_OUTPUT
+	signal	:	LREAL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bInit THEN
+	(* init the setpoint array *)
+	stCTRL_SIGNAL_GENERATOR_PARAMS.tCtrlCycleTime		:= T#1MS;
+	stCTRL_SIGNAL_GENERATOR_PARAMS.tTaskCycleTime		:= T#1MS;
+	stCTRL_SIGNAL_GENERATOR_PARAMS.eSignalType			:= eCTRL_SINUS;
+	stCTRL_SIGNAL_GENERATOR_PARAMS.tStart				:= T#0S;
+	stCTRL_SIGNAL_GENERATOR_PARAMS.tCylceDuration		:= T#200MS;
+	stCTRL_SIGNAL_GENERATOR_PARAMS.fAmplitude			:= 10;
+	stCTRL_SIGNAL_GENERATOR_PARAMS.fOffset				:= 0;
+
+	(* set the mode to ACTIVE --> normal operation *)
+	eMode := eCTRL_MODE_ACTIVE;
+
+	(* reset init flag *)
+	bInit := FALSE;
+END_IF
+
+(* call function block *)
+fbCTRL_SIGNAL_GENERATOR(fManValue		:= fManValue,
+						eMode			:= eMode,
+						stParams		:= stCTRL_SIGNAL_GENERATOR_PARAMS,
+						fOut			=> signal);]]></ST>
+    </Implementation>
+    <LineIds Name="VariableSine">
+      <LineId Id="33" Count="14" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="55" Count="4" />
+      <LineId Id="54" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

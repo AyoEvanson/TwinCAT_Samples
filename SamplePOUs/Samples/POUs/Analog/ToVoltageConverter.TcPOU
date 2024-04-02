@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="ToVoltageConverter" Id="{e6a8335b-afa3-4761-ade4-7a458d67fc80}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK ToVoltageConverter
+VAR_INPUT
+	in	:	LREAL;
+	
+	negative	:	LREAL;
+END_VAR
+VAR_OUTPUT
+	voltage	:	INT;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF in > 0 THEN
+	voltage := LREAL_TO_INT(in/10 * 32767);
+ELSIF in < 0 THEN
+	voltage := LREAL_TO_INT(in/10 * 32768);
+ELSIF in = 0 THEN
+	voltage := 0;
+END_IF
+]]></ST>
+    </Implementation>
+    <LineIds Name="ToVoltageConverter">
+      <LineId Id="22" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="27" Count="2" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="42" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

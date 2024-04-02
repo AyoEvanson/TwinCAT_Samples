@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ELM3002InputwTimestamp" Id="{9d378d13-e644-49ea-a1e3-2d0b716d3554}">
+    <Declaration><![CDATA[TYPE ELM3002InputwTimestamp :
+STRUCT
+	analogInput	:	LREAL;
+	timestamp	:	ULINT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

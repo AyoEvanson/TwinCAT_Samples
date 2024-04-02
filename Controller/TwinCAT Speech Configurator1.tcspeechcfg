@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcSpeechConfiguratorProject Version="1.1.2.1">
+  <General_Configuration>
+    <TargetSystem>5.119.159.52.1.1 (CX-779F34)</TargetSystem>
+  </General_Configuration>
+  <CoreConfiguration Id="1337" Name="TcSpeech Configuration">
+    <General LogLevel="3" />
+    <MetaData Created="08/03/2024 14:54:00" Version="1.1.2.1" />
+    <ServiceConfigurations />
+    <CommandConfigurations />
+  </CoreConfiguration>
+  <GrammarFiles />
+</TcSpeechConfiguratorProject>

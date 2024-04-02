@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="TimerCounter" Id="{2bdb58ba-2d09-4574-8894-83517136137d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK TimerCounter
+VAR
+	bRun	AT%I*	:	BOOL;
+	bTest	AT%Q*	:	BOOL;
+	iCounter	AT%Q*	:	INT;
+	
+	ton		:	TON;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bRun THEN
+	ton.IN := NOT ton.Q;
+	ton.PT := T#1S;
+	
+	IF ton.Q THEN
+		iCounter := iCounter + 1;
+		bTest := NOT bTest;
+	END_IF
+	
+	IF iCounter > 10000 THEN
+		iCounter := 0;
+	END_IF
+	
+	ton();
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="TimerCounter">
+      <LineId Id="16" Count="13" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

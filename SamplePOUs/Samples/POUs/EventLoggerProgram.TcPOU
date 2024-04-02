@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="EventLoggerProgram" Id="{2d5e86fb-cf04-4625-9bd9-96b21eef3ebf}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM EventLoggerProgram
+VAR
+	bBoolean	:	BOOL;	
+
+	eEventType		: E_EventType := E_EventType.Alarm;
+	eEventSeverity	:	TcEventSeverity := TcEventSeverity.Error;
+	nEventIdentity	:	UDINT := 42;
+	sEventText		:	STRING(255) := 'An Error has occured';
+	
+	CsvPersistentEventStorage	:	FB_CsvPersistentEventStorage;
+	EventLogger	:	EventLogger(CsvPersistentEventStorage);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bBoolean THEN
+	EventLogger.AddEvent(eEventType, eEventSeverity, nEventIdentity, sEventText);	
+	bBoolean := FALSE;
+END_IF
+
+CsvPersistentEventStorage();]]></ST>
+    </Implementation>
+    <LineIds Name="EventLoggerProgram">
+      <LineId Id="11" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="42" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

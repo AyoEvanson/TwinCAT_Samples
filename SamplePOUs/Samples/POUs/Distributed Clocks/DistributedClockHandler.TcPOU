@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="DistributedClockHandler" Id="{13ef22e2-2a9f-4027-8c01-f2fb152b5811}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK DistributedClockHandler
+VAR_INPUT	
+	Samples	:	ARRAY[0..noOfSamples] OF LREAL;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	TimeBreakdown	:	TimeBreakdown;
+
+	NextLatch	AT%I*	:	ULINT;
+	CurrentLatch	:	ULINT;
+	
+	Timestamps	:	ARRAY[0..noOfSamples] OF ULINT;
+	
+END_VAR
+VAR CONSTANT
+	noOfSamples		:	INT		:= 19;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF CurrentLatch <> 0 THEN
+	CalculateTimestamps();
+END_IF
+
+CurrentLatch := NextLatch;]]></ST>
+    </Implementation>
+    <Method Name="CalculateTimestamps" Id="{06e4eb1c-97c5-4b28-b6ec-204466fa06bc}">
+      <Declaration><![CDATA[METHOD CalculateTimestamps
+VAR
+	sampleIterator	:	INT;
+END_VAR
+VAR CONSTANT
+	cycleTime		:	ULINT	:= 1000000;
+	sampleDistance	:	UINT	:= 50000;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[FOR sampleIterator := 0 TO noOfSamples DO
+	Timestamps[sampleIterator] := (CurrentLatch - cycleTime) - (INT_TO_ULINT(sampleIterator) * sampleDistance);
+END_FOR]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="DistributedClockHandler">
+      <LineId Id="23" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="DistributedClockHandler.CalculateTimestamps">
+      <LineId Id="6" Count="1" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

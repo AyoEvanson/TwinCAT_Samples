@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="TimeBasedTeach" Id="{88979736-9d2c-4652-8b8c-56b57a98225b}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK TimeBasedTeach
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	bStartTeach	AT%I*	:	BOOL;
+	bStopTeach	AT%Q*	:	BOOL;
+	
+	ton	:	TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bStartTeach THEN
+	ton.IN := NOT ton.Q;
+	ton.PT := T#5S;
+	
+	//ensure StopTeach is False
+	bStopTeach := FALSE;
+	
+	IF ton.Q THEN
+		bStartTeach := FALSE;
+		bStopTeach := TRUE;
+	END_IF
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="TimeBasedTeach">
+      <LineId Id="9" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="28" Count="5" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="22" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

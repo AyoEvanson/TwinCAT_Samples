@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="TimeBreakdown" Id="{0cddfe48-76a7-4863-bc7a-1b9117520887}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK TimeBreakdown
+VAR_INPUT
+	timesignal	:	ULINT;
+END_VAR
+VAR_OUTPUT	
+	seconds	:	ULINT;
+	milseconds	:	ULINT;
+	micseconds	:	ULINT;
+	nseconds	:	ULINT;
+END_VAR
+VAR	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[nseconds := timesignal MOD 1000;
+
+micseconds := (timesignal MOD 1000000)/1000;
+
+milseconds := (timesignal MOD 1000000000)/1000000;
+
+seconds := (timesignal MOD 1000000000000)/1000000000;]]></ST>
+    </Implementation>
+    <LineIds Name="TimeBreakdown">
+      <LineId Id="9" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="21" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

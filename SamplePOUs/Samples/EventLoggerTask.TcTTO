@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Task Name="EventLoggerTask" Id="{0501608a-7cfb-4cb8-a77c-7f4fb07d30c6}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>1000</CycleTime>
+    <Priority>12</Priority>
+    <PouCall>
+      <Name>EventLoggerProgram</Name>
+    </PouCall>
+    <TaskFBGuid>{ca8cbf38-1d5d-441c-a08f-52f909abe088}</TaskFBGuid>
+    <Fb_init>{bf6bfc13-a08a-4bbb-bd2b-403c91e53ca5}</Fb_init>
+    <Fb_exit>{936690b2-c6dd-44a7-8717-fcdf8d333837}</Fb_exit>
+    <CycleUpdate>{4791b2d7-6af9-4095-9614-901ae68a2f3d}</CycleUpdate>
+    <PostCycleUpdate>{310c915b-b834-415f-86c8-8cfc1d061415}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>

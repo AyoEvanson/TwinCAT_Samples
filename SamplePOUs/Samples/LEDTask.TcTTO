@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Task Name="LEDTask" Id="{59586df5-fc51-44fa-bd67-d9d1ed9995ab}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>12.5</CycleTime>
+    <Priority>4</Priority>
+    <PouCall>
+      <Name>LEDs</Name>
+    </PouCall>
+    <TaskFBGuid>{e97d749e-d6d5-47c7-bc75-e4dd52fc4732}</TaskFBGuid>
+    <Fb_init>{1dfe7749-84f4-4048-a26c-1809194751c6}</Fb_init>
+    <Fb_exit>{821199dd-7f18-4ea6-a4a9-63540e51c721}</Fb_exit>
+    <CycleUpdate>{2a6832a2-eab2-4aec-864e-a120e8d1bd1a}</CycleUpdate>
+    <PostCycleUpdate>{4ca87094-8404-4c7a-b1f7-b2171a59e98b}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>

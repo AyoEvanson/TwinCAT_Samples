@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="SignalTimeComparison" Id="{2d963246-5fc1-4831-ad2c-9f109bc44b9c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK SignalTimeComparison
+VAR_INPUT
+	insignalTime	:	ULINT;
+	outsignalTime	:	ULINT;
+END_VAR
+VAR_OUTPUT
+	seconds	:	ULINT;
+	milseconds	:	ULINT;
+	micseconds	:	ULINT;
+	nseconds	:	ULINT;
+END_VAR
+VAR
+END_VAR
+VAR CONSTANT
+	noOfSamples	:	INT := 19;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[nseconds := (insignalTime MOD 1000) - (outsignalTime MOD 1000);
+
+micseconds := ((insignalTime MOD 1000000) - (outsignalTime MOD 1000000))/1000;
+
+milseconds := ((insignalTime MOD 1000000000) - (outsignalTime MOD 1000000000))/1000000;
+
+seconds := (insignalTime/1000000000) - (outsignalTime/1000000000);
+]]></ST>
+    </Implementation>
+    <LineIds Name="SignalTimeComparison">
+      <LineId Id="9" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="25" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

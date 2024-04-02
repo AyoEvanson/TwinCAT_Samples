@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="RGBW" Id="{ae082d2a-8caf-460c-9c60-3ce2027f41cd}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK RGBW
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	Red		AT%Q*	:	INT;
+	Green	AT%Q*	:	INT;
+	Blue	AT%Q*	:	INT;
+	White	AT%Q*	:	INT;
+		
+	Run		:	BOOL;
+	
+	ton		:	TON;
+	Delay	:	TIME := T#0.5S;
+	
+	Countdown	:	INT		:= 5;
+	On			:	BOOL	:= FALSE;;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF Run THEN
+	ton.IN := NOT ton.Q;
+	ton.PT := Delay;
+	
+	IF ton.Q AND Countdown > 0 THEN //flashes 5 amber lights at < 1 second delay
+		IF NOT On THEN
+			Red := 32767;
+			Green := 15000;
+			Countdown := Countdown - 1;
+			On := TRUE;
+		ELSIF On THEN
+			Red := 0;
+			Green := 0;
+			On := FALSE;
+		END_IF
+	ELSIF ton.Q AND Countdown = 0 THEN //go green lights 2 second delay
+		Green := 32767;
+		Red := 0;
+		Countdown := -1;
+	ELSIF ton.Q AND Countdown < 0 THEN //turns off countdown and resets counter after 2 seconds of green
+		Run := FALSE;
+	END_IF
+	
+	IF Countdown = 0 THEN
+		Delay := T#2S;
+	END_IF
+	
+	ton();
+ELSIF NOT Run THEN
+	Red := 0;
+	Green := 0;
+	Blue := 0;
+	White := 0;
+	Countdown := 5;
+	Delay := T#0.5S;
+END_IF
+]]></ST>
+    </Implementation>
+    <LineIds Name="RGBW">
+      <LineId Id="40" Count="0" />
+      <LineId Id="43" Count="4" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="58" Count="1" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="63" Count="0" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="72" Count="0" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="67" Count="0" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="84" Count="2" />
+      <LineId Id="48" Count="1" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="70" Count="1" />
+      <LineId Id="69" Count="0" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="77" Count="5" />
+      <LineId Id="87" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="88" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

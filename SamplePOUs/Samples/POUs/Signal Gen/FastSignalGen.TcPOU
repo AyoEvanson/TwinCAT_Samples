@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FastSignalGen" Id="{ac87b5bd-5645-4b57-bd6b-2512dc8b343d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM FastSignalGen
+VAR
+	sine	:	VariableSine;
+	
+	
+	voltageconverter	:	ToVoltageConverter;
+	
+	voltageOut	AT%Q*	:	INT;
+	voltageInv	AT%Q*	:	INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//sine wave generator
+sine();
+
+//sine signal to EL4132 converter
+voltageconverter(in := sine.signal);
+voltageOut := voltageconverter.voltage;
+IF voltageOut = -32768 THEN
+	voltageInv := 32767;
+ELSIF voltageOut <> 0 THEN
+	voltageInv := -voltageOut;
+ELSE
+	voltageInv := 0;
+END_IF
+]]></ST>
+    </Implementation>
+    <LineIds Name="FastSignalGen">
+      <LineId Id="8" Count="0" />
+      <LineId Id="72" Count="11" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,27 @@
+<Node>
+  <Title>FilterSet</Title>
+  <Expanded>False</Expanded>
+  <FileName></FileName>
+  <Children>
+    <Node>
+      <Title>Filter Designer Project</Title>
+      <Expanded>False</Expanded>
+      <FileName>C:\Users\AyoO\Documents\4.TcXaeShell\1. Samples\SamplePOUs\FilterSet\Filter Designer Project.tcfilterproj</FileName>
+      <Children>
+        <Node>
+          <Title>Filter Plot</Title>
+          <Expanded>False</Expanded>
+          <FileName></FileName>
+          <Children>
+            <Node>
+              <Title>Filter Set</Title>
+              <Expanded>False</Expanded>
+              <FileName></FileName>
+              <Children />
+            </Node>
+          </Children>
+        </Node>
+      </Children>
+    </Node>
+  </Children>
+</Node>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{e6967ea9-cb30-4ee7-b42c-ad0177bcac3f}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR		
+	bRun	:	BOOL := FALSE;
+	
+	secondtimer	:	TimerCounter;
+	
+	oversamplingHandler	:	OversamplingHandler;
+	
+	//EL3751 signals in
+	voltageIn	AT%I*	:	DINT;
+	voltageIn2	AT%I*	:	DINT;
+	
+	EL3xxx	:	AnalogSignalProcessing;
+	ELM3xxx	:	AnalogSignalProcessing;
+	
+	primaryVoltage		: LREAL;
+	secondaryVoltage	:	LREAL;
+	
+	//scope server control block
+(*	fbScopeServer	:	FB_ScopeServerSample;
+	xStartStopScope	:	BOOL;
+	*)
+	
+	//Analytics Teach FB
+	//fbTimeTeach	:	TimeBasedTeach;
+	
+	// dc time stuff
+	fbSystemDCTime	:	GetDCTime;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bRun THEN
+		
+	//Timer counter fb
+	//secondtimer();
+	
+	//oversampling - ELM3002 processing
+	oversamplingHandler();
+	
+	//EL3751 reading signal
+	(*EL3xxx(signalIn := voltageIn);
+	ELM3xxx(signalIn := voltageIn2);*)
+	
+	//EL3751 Signal processing
+	//primaryVoltage := EL3xxx.voltageIn;
+	//secondaryVoltage := ELM3xxx.voltageIn;
+	
+	//Scope server control from PLC
+	(*
+	fbScopeServer(
+		sNetId					:='5.119.159.52.1.1', 
+		bExternalTriggerEvent	:=xStartStopScope , 
+		sConfigFile				:= 'C:\Y.tcscopex', 
+		sSaveFile				:='C:\Record.svdx' , 
+		bBusy					=> , 
+		bError					=>, 
+		nErrorId				=>);
+	*)
+	
+	//fbTimeTeach();
+
+	fbSystemDCTime();
+	
+END_IF
+
+bRun := True;]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="284" Count="1" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="130" Count="0" />
+      <LineId Id="101" Count="0" />
+      <LineId Id="100" Count="0" />
+      <LineId Id="102" Count="0" />
+      <LineId Id="57" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="88" Count="0" />
+      <LineId Id="126" Count="0" />
+      <LineId Id="97" Count="0" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="87" Count="0" />
+      <LineId Id="163" Count="0" />
+      <LineId Id="168" Count="1" />
+      <LineId Id="200" Count="0" />
+      <LineId Id="170" Count="5" />
+      <LineId Id="162" Count="0" />
+      <LineId Id="199" Count="0" />
+      <LineId Id="226" Count="0" />
+      <LineId Id="225" Count="0" />
+      <LineId Id="296" Count="0" />
+      <LineId Id="255" Count="0" />
+      <LineId Id="297" Count="0" />
+      <LineId Id="293" Count="0" />
+      <LineId Id="299" Count="0" />
+      <LineId Id="298" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

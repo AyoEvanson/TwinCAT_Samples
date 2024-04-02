@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="GetDCTime" Id="{8615e09d-95a9-42ce-988d-e0f5c8b259d9}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK GetDCTime
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+	actual	:	ULINT;
+	tasktime	:	ULINT;
+	ticktime	:	ULINT;
+END_VAR
+VAR
+	aminustask	:	ULINT;
+	aminustick	:	ULINT;
+	taskminustick	:	ULINT;
+	
+	bb	:	BOOL;
+	
+	signalcomp :	SignalTimeComparison;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[actual := F_GetActualDcTime64();
+tasktime := F_GetCurDcTaskTime64();
+ticktime := F_GetCurDcTickTime64();
+
+
+// compares the offset to different dc time functions
+IF bb THEN
+	aminustask := actual - tasktime;
+	aminustick := actual - ticktime;
+	taskminustick := tasktime - ticktime;
+	
+	signalcomp(insignalTime := actual, outsignalTime := tasktime);
+	
+	bb := FALSE;
+END_IF
+]]></ST>
+    </Implementation>
+    <LineIds Name="GetDCTime">
+      <LineId Id="9" Count="0" />
+      <LineId Id="17" Count="1" />
+      <LineId Id="68" Count="1" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="76" Count="2" />
+      <LineId Id="87" Count="0" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="95" Count="0" />
+      <LineId Id="88" Count="0" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="43" Count="0" />
+      <LineId Id="89" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
